@@ -17,7 +17,7 @@ const Product = () => {
 
   const createPreference = async () => {
     try {
-      const response = await axios.post(API_ENDPOINT, {
+      const response = await axios.post(API_ENDPOINT+'create_preference', {
         description: "¡A los Pits! - Guido",
         price: precio,
         quantity: cantidad,
