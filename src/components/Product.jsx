@@ -8,7 +8,7 @@ import Quantity from "./Quantity";
 const Product = () => {
   const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
   const API_ENDPOINT = "https://mp-checkout-backend.vercel.app/"
-  
+
   const [cantidad, setCantidad] = useState(1);
   const [precio, setPrecio] = useState(449);
 
@@ -21,8 +21,13 @@ const Product = () => {
         description: "¡A los Pits! - Guido",
         price: precio,
         quantity: cantidad,
+      }, {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        },
       })
-      console.log(response.data)
 
       const { id } = response.data
       return id
