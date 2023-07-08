@@ -7,6 +7,7 @@ import Quantity from "./Quantity";
 
 const Product = () => {
   const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
+  const API_ENDPOINT = "https://mp-checkout-backend.vercel.app/"
   
   const [cantidad, setCantidad] = useState(1);
   const [precio, setPrecio] = useState(449);
@@ -16,7 +17,7 @@ const Product = () => {
 
   const createPreference = async () => {
     try {
-      const response = await axios.post("http://localhost:8080/create_preference", {
+      const response = await axios.post(API_ENDPOINT, {
         description: "¡A los Pits! - Guido",
         price: precio,
         quantity: cantidad,
