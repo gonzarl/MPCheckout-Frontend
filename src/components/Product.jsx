@@ -7,7 +7,7 @@ import Quantity from "./Quantity";
 
 const Product = () => {
   const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
-  const API_ENDPOINT = "https://mp-checkout-backend.vercel.app/"
+  const API_ENDPOINT = "http://localhost:8080/"
 
   const [cantidad, setCantidad] = useState(1);
   const [precio, setPrecio] = useState(449);
